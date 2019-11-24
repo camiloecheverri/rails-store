@@ -1,0 +1,23 @@
+<div class="row product-details">
+  <div class="col-md-offset-2 col-md-4 text-center">
+    <h1><%= @product.name %></h1>
+    <%= image_tag @product.picture, width: 300 %>
+  </div>
+  <div class="col-md-4 ">
+    <div class="description">
+      <p><%= @product.description %></p>
+      <p>
+        <strong>Precio:</strong>
+        <%= number_to_currency @product.price, precision: 0 %>
+      </p>
+      <p>
+        <strong>Cantidades disponibles:</strong>
+        <%= @product.quantity %>
+      </p>
+      <h3>
+        <%= link_to 'Comprar', purchase_product_path(@product),
+                    class: 'btn btn-lg btn-success'%>
+      </h3>
+    </div>
+  </div>
+</div>
